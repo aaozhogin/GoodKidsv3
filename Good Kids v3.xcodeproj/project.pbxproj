@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054FA46A24218BA5007ACF78 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA46924218BA5007ACF78 /* AsyncOperation.swift */; };
+		054FA46C24218E57007ACF78 /* SumOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA46B24218E57007ACF78 /* SumOperation.swift */; };
 		056D37EC2418E09C00CE739A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D37EB2418E09C00CE739A /* AppDelegate.swift */; };
 		056D37EE2418E09C00CE739A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D37ED2418E09C00CE739A /* SceneDelegate.swift */; };
 		056D37F02418E09C00CE739A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D37EF2418E09C00CE739A /* ViewController.swift */; };
@@ -15,6 +17,19 @@
 		056D37F82418E09F00CE739A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 056D37F62418E09F00CE739A /* LaunchScreen.storyboard */; };
 		056D38032418E0A000CE739A /* Good_Kids_v3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D38022418E0A000CE739A /* Good_Kids_v3Tests.swift */; };
 		056D380E2418E0A000CE739A /* Good_Kids_v3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D380D2418E0A000CE739A /* Good_Kids_v3UITests.swift */; };
+		056D381C2418EC1A00CE739A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056D381B2418EC1A00CE739A /* GoogleService-Info.plist */; };
+		056D381D2418EC1A00CE739A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056D381B2418EC1A00CE739A /* GoogleService-Info.plist */; };
+		056D381E2418EC1A00CE739A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056D381B2418EC1A00CE739A /* GoogleService-Info.plist */; };
+		056D3820241900A600CE739A /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D381F241900A600CE739A /* ModelController.swift */; };
+		056D3822241900DB00CE739A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D3821241900DB00CE739A /* User.swift */; };
+		056D38242419051300CE739A /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D38232419051300CE739A /* NewUserViewController.swift */; };
+		056D382924190B2B00CE739A /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D382824190B2B00CE739A /* MainMenuViewController.swift */; };
+		056D382F2419870500CE739A /* FamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D382D2419870500CE739A /* FamilyTableViewCell.swift */; };
+		056D38302419870500CE739A /* FamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 056D382E2419870500CE739A /* FamilyTableViewCell.xib */; };
+		056D38342419921900CE739A /* AddNextUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D38332419921900CE739A /* AddNextUserViewController.swift */; };
+		81D2736F2775128B0B22B633 /* Pods_Good_Kids_v3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A745A9817B2D7B014DD91 /* Pods_Good_Kids_v3.framework */; };
+		90EE399D880315D97F3E96A1 /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ECB45BCC83282FD750BBAD /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework */; };
+		EFBA157EA231C32298CFB392 /* Pods_Good_Kids_v3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DF332A2F9E4080F8F38F98 /* Pods_Good_Kids_v3Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		005112E3CCDECFD03F77482A /* Pods-Good Kids v3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3Tests.debug.xcconfig"; path = "Target Support Files/Pods-Good Kids v3Tests/Pods-Good Kids v3Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		054FA46924218BA5007ACF78 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		054FA46B24218E57007ACF78 /* SumOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumOperation.swift; sourceTree = "<group>"; };
 		056D37E82418E09C00CE739A /* Good Kids v3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Kids v3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056D37EB2418E09C00CE739A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056D37ED2418E09C00CE739A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +67,22 @@
 		056D38092418E0A000CE739A /* Good Kids v3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Good Kids v3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056D380D2418E0A000CE739A /* Good_Kids_v3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good_Kids_v3UITests.swift; sourceTree = "<group>"; };
 		056D380F2418E0A000CE739A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		056D381B2418EC1A00CE739A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		056D381F241900A600CE739A /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		056D3821241900DB00CE739A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		056D38232419051300CE739A /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		056D382824190B2B00CE739A /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuViewController.swift; path = "Good Kids v3/Controller/MainMenuViewController.swift"; sourceTree = SOURCE_ROOT; };
+		056D382D2419870500CE739A /* FamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTableViewCell.swift; sourceTree = "<group>"; };
+		056D382E2419870500CE739A /* FamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyTableViewCell.xib; sourceTree = "<group>"; };
+		056D38332419921900CE739A /* AddNextUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNextUserViewController.swift; sourceTree = "<group>"; };
+		09ECB45BCC83282FD750BBAD /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Good_Kids_v3_Good_Kids_v3UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2A745A9817B2D7B014DD91 /* Pods_Good_Kids_v3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Good_Kids_v3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE30580D08C8904D3670FC4 /* Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig"; path = "Target Support Files/Pods-Good Kids v3-Good Kids v3UITests/Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig"; sourceTree = "<group>"; };
+		545EB871F27844F8C0A3743F /* Pods-Good Kids v3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3.release.xcconfig"; path = "Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3.release.xcconfig"; sourceTree = "<group>"; };
+		B287DE60230135F2ACF32BC9 /* Pods-Good Kids v3-Good Kids v3UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3-Good Kids v3UITests.debug.xcconfig"; path = "Target Support Files/Pods-Good Kids v3-Good Kids v3UITests/Pods-Good Kids v3-Good Kids v3UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B73B519C52ED0645BB09ABBB /* Pods-Good Kids v3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3.debug.xcconfig"; path = "Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3.debug.xcconfig"; sourceTree = "<group>"; };
+		C4DF332A2F9E4080F8F38F98 /* Pods_Good_Kids_v3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Good_Kids_v3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76AE3B1F927720B60E3E1DD /* Pods-Good Kids v3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3Tests.release.xcconfig"; path = "Target Support Files/Pods-Good Kids v3Tests/Pods-Good Kids v3Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D2736F2775128B0B22B633 /* Pods_Good_Kids_v3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBA157EA231C32298CFB392 /* Pods_Good_Kids_v3Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90EE399D880315D97F3E96A1 /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +120,8 @@
 				056D38012418E0A000CE739A /* Good Kids v3Tests */,
 				056D380C2418E0A000CE739A /* Good Kids v3UITests */,
 				056D37E92418E09C00CE739A /* Products */,
+				F6573F0CD4CA5EFA34DEC9F8 /* Pods */,
+				D4D9B054A3F1F6A88D48BE97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +140,13 @@
 			children = (
 				056D37EB2418E09C00CE739A /* AppDelegate.swift */,
 				056D37ED2418E09C00CE739A /* SceneDelegate.swift */,
-				056D37EF2418E09C00CE739A /* ViewController.swift */,
-				056D37F12418E09C00CE739A /* Main.storyboard */,
+				056D38272419053000CE739A /* Controller */,
 				056D37F42418E09F00CE739A /* Assets.xcassets */,
+				056D38262419052A00CE739A /* Model */,
+				056D38252419051E00CE739A /* View */,
 				056D37F62418E09F00CE739A /* LaunchScreen.storyboard */,
 				056D37F92418E09F00CE739A /* Info.plist */,
+				056D381B2418EC1A00CE739A /* GoogleService-Info.plist */,
 			);
 			path = "Good Kids v3";
 			sourceTree = "<group>";
@@ -128,6 +169,69 @@
 			path = "Good Kids v3UITests";
 			sourceTree = "<group>";
 		};
+		056D38252419051E00CE739A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				056D37F12418E09C00CE739A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		056D38262419052A00CE739A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				056D381F241900A600CE739A /* ModelController.swift */,
+				056D3821241900DB00CE739A /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		056D38272419053000CE739A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				056D382A2419868600CE739A /* Custom Cell */,
+				056D37EF2418E09C00CE739A /* ViewController.swift */,
+				056D38332419921900CE739A /* AddNextUserViewController.swift */,
+				056D38232419051300CE739A /* NewUserViewController.swift */,
+				054FA46924218BA5007ACF78 /* AsyncOperation.swift */,
+				056D382824190B2B00CE739A /* MainMenuViewController.swift */,
+				054FA46B24218E57007ACF78 /* SumOperation.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		056D382A2419868600CE739A /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				056D382D2419870500CE739A /* FamilyTableViewCell.swift */,
+				056D382E2419870500CE739A /* FamilyTableViewCell.xib */,
+			);
+			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		D4D9B054A3F1F6A88D48BE97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A2A745A9817B2D7B014DD91 /* Pods_Good_Kids_v3.framework */,
+				09ECB45BCC83282FD750BBAD /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework */,
+				C4DF332A2F9E4080F8F38F98 /* Pods_Good_Kids_v3Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6573F0CD4CA5EFA34DEC9F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B73B519C52ED0645BB09ABBB /* Pods-Good Kids v3.debug.xcconfig */,
+				545EB871F27844F8C0A3743F /* Pods-Good Kids v3.release.xcconfig */,
+				B287DE60230135F2ACF32BC9 /* Pods-Good Kids v3-Good Kids v3UITests.debug.xcconfig */,
+				3CE30580D08C8904D3670FC4 /* Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig */,
+				005112E3CCDECFD03F77482A /* Pods-Good Kids v3Tests.debug.xcconfig */,
+				F76AE3B1F927720B60E3E1DD /* Pods-Good Kids v3Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056D38122418E0A000CE739A /* Build configuration list for PBXNativeTarget "Good Kids v3" */;
 			buildPhases = (
+				AAE0385DF306D22AA98DF5E1 /* [CP] Check Pods Manifest.lock */,
 				056D37E42418E09C00CE739A /* Sources */,
 				056D37E52418E09C00CE739A /* Frameworks */,
 				056D37E62418E09C00CE739A /* Resources */,
+				D97886D592D7D5C832509230 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056D38152418E0A000CE739A /* Build configuration list for PBXNativeTarget "Good Kids v3Tests" */;
 			buildPhases = (
+				93E9A0731231F2A59C45ECF5 /* [CP] Check Pods Manifest.lock */,
 				056D37FA2418E09F00CE739A /* Sources */,
 				056D37FB2418E09F00CE739A /* Frameworks */,
 				056D37FC2418E09F00CE739A /* Resources */,
@@ -170,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056D38182418E0A000CE739A /* Build configuration list for PBXNativeTarget "Good Kids v3UITests" */;
 			buildPhases = (
+				DFC53BCE9E383D5BF915E7DD /* [CP] Check Pods Manifest.lock */,
 				056D38052418E0A000CE739A /* Sources */,
 				056D38062418E0A000CE739A /* Frameworks */,
 				056D38072418E0A000CE739A /* Resources */,
+				B3B088925B39F7E228E445B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,7 +341,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056D38302419870500CE739A /* FamilyTableViewCell.xib in Resources */,
 				056D37F82418E09F00CE739A /* LaunchScreen.storyboard in Resources */,
+				056D381C2418EC1A00CE739A /* GoogleService-Info.plist in Resources */,
 				056D37F52418E09F00CE739A /* Assets.xcassets in Resources */,
 				056D37F32418E09C00CE739A /* Main.storyboard in Resources */,
 			);
@@ -242,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056D381D2418EC1A00CE739A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,19 +361,131 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056D381E2418EC1A00CE739A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93E9A0731231F2A59C45ECF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Good Kids v3Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAE0385DF306D22AA98DF5E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Good Kids v3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3B088925B39F7E228E445B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3-Good Kids v3UITests/Pods-Good Kids v3-Good Kids v3UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3-Good Kids v3UITests/Pods-Good Kids v3-Good Kids v3UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3-Good Kids v3UITests/Pods-Good Kids v3-Good Kids v3UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D97886D592D7D5C832509230 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFC53BCE9E383D5BF915E7DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Good Kids v3-Good Kids v3UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		056D37E42418E09C00CE739A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054FA46C24218E57007ACF78 /* SumOperation.swift in Sources */,
 				056D37F02418E09C00CE739A /* ViewController.swift in Sources */,
+				056D382F2419870500CE739A /* FamilyTableViewCell.swift in Sources */,
+				056D3820241900A600CE739A /* ModelController.swift in Sources */,
 				056D37EC2418E09C00CE739A /* AppDelegate.swift in Sources */,
+				056D3822241900DB00CE739A /* User.swift in Sources */,
+				056D382924190B2B00CE739A /* MainMenuViewController.swift in Sources */,
+				056D38242419051300CE739A /* NewUserViewController.swift in Sources */,
 				056D37EE2418E09C00CE739A /* SceneDelegate.swift in Sources */,
+				054FA46A24218BA5007ACF78 /* AsyncOperation.swift in Sources */,
+				056D38342419921900CE739A /* AddNextUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +656,7 @@
 		};
 		056D38132418E0A000CE739A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B73B519C52ED0645BB09ABBB /* Pods-Good Kids v3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +675,7 @@
 		};
 		056D38142418E0A000CE739A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 545EB871F27844F8C0A3743F /* Pods-Good Kids v3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +694,7 @@
 		};
 		056D38162418E0A000CE739A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 005112E3CCDECFD03F77482A /* Pods-Good Kids v3Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +717,7 @@
 		};
 		056D38172418E0A000CE739A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F76AE3B1F927720B60E3E1DD /* Pods-Good Kids v3Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +740,7 @@
 		};
 		056D38192418E0A000CE739A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B287DE60230135F2ACF32BC9 /* Pods-Good Kids v3-Good Kids v3UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +761,7 @@
 		};
 		056D381A2418E0A000CE739A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CE30580D08C8904D3670FC4 /* Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
