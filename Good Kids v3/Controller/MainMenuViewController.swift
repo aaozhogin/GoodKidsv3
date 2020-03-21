@@ -10,30 +10,42 @@ import UIKit
 import Firebase
 
 class MainMenuViewController: UIViewController {
+    
+    var db: Firestore!
+    var user: User!
 
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var familyLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var addKidButton: UIButton!
+    @IBOutlet weak var addParentButton: UIButton!
     
     @IBAction func addParentButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "toNextParentScreen", sender: self)
     }
     
+    @IBAction func familyButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toFamilyScreen", sender: self)
+    }
+    
+    @IBAction func addKidButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "toCreateKid", sender: self)
+        
+    }
+
     @IBAction func logOffButtonClicked(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            let loginVC = self.navigationController?.viewControllers[1] as! ViewController
+            let loginVC = self.navigationController?.viewControllers[0] as! ViewController
+            loginVC.cameFromMainMenu = true
+            loginVC.loginTextField.text = ""
+            loginVC.passwordTextField.text = ""
             self.navigationController?.popToViewController(loginVC, animated: true)
         } catch {
             print("could not sign out")
         }
     }
     
-    
-    var db: Firestore!
-    var user: User!
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,30 +58,32 @@ class MainMenuViewController: UIViewController {
         if user.isAdult {
         welcomeLabel.text = "Hello \(user.username)! \n you are adult"
         } else {
-        welcomeLabel.text = "Hello \(user.username)! \n you are kid"
+            welcomeLabel.text = "Hello \(user.username)! \n you are kid"
+            balanceLabel.isHidden = false
+            addParentButton.isHidden = true
+            addKidButton.isHidden = true
+            balanceLabel.text = "Balance: \(user.score)"
+            if user.isBoy {
+                print("User is a boy: \(user.isBoy). Setting color to blue")
+                view.backgroundColor = UIColor(red: 0.69, green: 0.85, blue: 0.96, alpha: 1.00)
+            } else {
+                print("User is a girl: \(user.isBoy). Setting color to pink")
+                view.backgroundColor = UIColor(red: 0.95, green: 0.90, blue: 0.92, alpha: 1.00)
+            }
         }
-        print("MainMenuVC: password default value is: \(UserDefaults.standard.object(forKey: "password") as? String)")
-        
-    
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNextParentScreen" {
             let destinationVC = segue.destination as! AddNextUserViewController
             destinationVC.user = user
-//        } else if segue.identifier == "backToLoginScreen" {
-//            let destinationVC = segue.destination as! ViewController
-//            destinationVC.cameFromMainMenu = true
+        } else if segue.identifier == "toCreateKid" {
+            let destinationVC = segue.destination as! AddKidViewController
+            destinationVC.user = user
+        } else if segue.identifier == "toFamilyScreen" {
+            let destinationVC = segue.destination as! FamilyViewController
+            destinationVC.user = user
+            
         }
     }
 

@@ -59,7 +59,8 @@ class AddNextUserViewController: UIViewController {
                                                        "score": -1,
                                                        "name": newName,
                                                        "isAdult": true,
-                                                       "familyName": family
+                                                       "familyName": family,
+                                                       "isBoy": true
                                                    ]) {err in
                                                        if err != nil {
                                                             print("Error writing into the DB")
@@ -72,14 +73,18 @@ class AddNextUserViewController: UIViewController {
                                                                     print("Error writing into the DB")
                                                                 } else {
                                                                     print("Record has been added to the famliies db")
+                                                                   
                                                                 }
                                                             }
                                                         }
                                                        }
                                                    }
                                             }
-                                            let menuVC = self.navigationController?.viewControllers[1] as! MainMenuViewController
-                                            self.navigationController?.popToViewController(menuVC, animated: true)
+                                            if let menuVC = self.navigationController?.viewControllers[1] {
+                                                self.navigationController?.popToViewController(menuVC, animated: true)
+                                            } else {
+                                                print("Cannot pop MenuViewController (self.navigationController?.viewControllers[1])")
+                                            }
                                         }
                                     }
                                 }

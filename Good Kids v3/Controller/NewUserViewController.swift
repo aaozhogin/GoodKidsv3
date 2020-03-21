@@ -86,7 +86,11 @@ class NewUserViewController: UIViewController {
                                  }
                                   
                              } else {
-                            print("User \(self.newUser.login) created successfully")
+                                print("User \(self.newUser.login) created successfully")
+                                UserDefaults.standard.set("true", forKey: "lastLoginSucceeded")
+                                UserDefaults.standard.set(self.loginTextField.text!, forKey: "user")
+                                UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
+                                                                    
                                 self.newUser.addToDB()
                                 print("ready for segue")
                                 self.performSegue(withIdentifier: "toMainMenu", sender: self)

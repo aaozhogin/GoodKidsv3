@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		054FA46A24218BA5007ACF78 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA46924218BA5007ACF78 /* AsyncOperation.swift */; };
-		054FA46C24218E57007ACF78 /* SumOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA46B24218E57007ACF78 /* SumOperation.swift */; };
+		050BE8D42425FE9200F3324C /* FamilyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050BE8D32425FE9200F3324C /* FamilyViewController.swift */; };
+		054FA46E24259281007ACF78 /* AddKidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FA46D24259281007ACF78 /* AddKidViewController.swift */; };
 		056D37EC2418E09C00CE739A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D37EB2418E09C00CE739A /* AppDelegate.swift */; };
 		056D37EE2418E09C00CE739A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D37ED2418E09C00CE739A /* SceneDelegate.swift */; };
 		056D37F02418E09C00CE739A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D37EF2418E09C00CE739A /* ViewController.swift */; };
@@ -20,7 +20,6 @@
 		056D381C2418EC1A00CE739A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056D381B2418EC1A00CE739A /* GoogleService-Info.plist */; };
 		056D381D2418EC1A00CE739A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056D381B2418EC1A00CE739A /* GoogleService-Info.plist */; };
 		056D381E2418EC1A00CE739A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056D381B2418EC1A00CE739A /* GoogleService-Info.plist */; };
-		056D3820241900A600CE739A /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D381F241900A600CE739A /* ModelController.swift */; };
 		056D3822241900DB00CE739A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D3821241900DB00CE739A /* User.swift */; };
 		056D38242419051300CE739A /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D38232419051300CE739A /* NewUserViewController.swift */; };
 		056D382924190B2B00CE739A /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D382824190B2B00CE739A /* MainMenuViewController.swift */; };
@@ -51,8 +50,8 @@
 
 /* Begin PBXFileReference section */
 		005112E3CCDECFD03F77482A /* Pods-Good Kids v3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3Tests.debug.xcconfig"; path = "Target Support Files/Pods-Good Kids v3Tests/Pods-Good Kids v3Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		054FA46924218BA5007ACF78 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
-		054FA46B24218E57007ACF78 /* SumOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumOperation.swift; sourceTree = "<group>"; };
+		050BE8D32425FE9200F3324C /* FamilyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyViewController.swift; sourceTree = "<group>"; };
+		054FA46D24259281007ACF78 /* AddKidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKidViewController.swift; sourceTree = "<group>"; };
 		056D37E82418E09C00CE739A /* Good Kids v3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Kids v3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		056D37EB2418E09C00CE739A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		056D37ED2418E09C00CE739A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +67,6 @@
 		056D380D2418E0A000CE739A /* Good_Kids_v3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good_Kids_v3UITests.swift; sourceTree = "<group>"; };
 		056D380F2418E0A000CE739A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		056D381B2418EC1A00CE739A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		056D381F241900A600CE739A /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		056D3821241900DB00CE739A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		056D38232419051300CE739A /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		056D382824190B2B00CE739A /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainMenuViewController.swift; path = "Good Kids v3/Controller/MainMenuViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -180,7 +178,6 @@
 		056D38262419052A00CE739A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				056D381F241900A600CE739A /* ModelController.swift */,
 				056D3821241900DB00CE739A /* User.swift */,
 			);
 			path = Model;
@@ -192,10 +189,10 @@
 				056D382A2419868600CE739A /* Custom Cell */,
 				056D37EF2418E09C00CE739A /* ViewController.swift */,
 				056D38332419921900CE739A /* AddNextUserViewController.swift */,
+				050BE8D32425FE9200F3324C /* FamilyViewController.swift */,
 				056D38232419051300CE739A /* NewUserViewController.swift */,
-				054FA46924218BA5007ACF78 /* AsyncOperation.swift */,
+				054FA46D24259281007ACF78 /* AddKidViewController.swift */,
 				056D382824190B2B00CE739A /* MainMenuViewController.swift */,
-				054FA46B24218E57007ACF78 /* SumOperation.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -475,16 +472,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				054FA46C24218E57007ACF78 /* SumOperation.swift in Sources */,
+				054FA46E24259281007ACF78 /* AddKidViewController.swift in Sources */,
 				056D37F02418E09C00CE739A /* ViewController.swift in Sources */,
 				056D382F2419870500CE739A /* FamilyTableViewCell.swift in Sources */,
-				056D3820241900A600CE739A /* ModelController.swift in Sources */,
 				056D37EC2418E09C00CE739A /* AppDelegate.swift in Sources */,
+				050BE8D42425FE9200F3324C /* FamilyViewController.swift in Sources */,
 				056D3822241900DB00CE739A /* User.swift in Sources */,
 				056D382924190B2B00CE739A /* MainMenuViewController.swift in Sources */,
 				056D38242419051300CE739A /* NewUserViewController.swift in Sources */,
 				056D37EE2418E09C00CE739A /* SceneDelegate.swift in Sources */,
-				054FA46A24218BA5007ACF78 /* AsyncOperation.swift in Sources */,
 				056D38342419921900CE739A /* AddNextUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,12 @@ class ViewController: UIViewController {
     var currentUser = User()
     var cameFromMainMenu = false
     
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        loggedIn = false
+//        dbDataLoaded = false
+//    }
+    
     var loggedIn = false {
         didSet {
             print("loggedIn property has changed from \(oldValue) to \(loggedIn) ")
@@ -28,13 +34,42 @@ class ViewController: UIViewController {
                     currentUser.login = login
                 }
             }
-            updateCurrentUser(user: currentUser)
+            db = Firestore.firestore()
+            let settings = FirestoreSettings()
+            Firestore.firestore().settings = settings
+            let Ref = db.collection("users").document("\(currentUser.login)")
+                                          
+            Ref.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    _ = document.data().map(String.init(describing:)) ?? "nil"
+                    let family = document.get("familyName") as! String
+                    let isAdult = document.get("isAdult") as! Bool
+                    let name = document.get("name") as! String
+                    let score = document.get("score") as! Int
+                    let isBoy = document.get("isBoy") as! Bool
+                    self.currentUser.score = score
+                    self.currentUser.isBoy = isBoy
+                    self.currentUser.username = name
+                    print("Setting currentUser.username = \(name)")
+                    self.currentUser.isAdult = isAdult
+                    print("Setting currentUser.isAdult = \(isAdult)")
+                    self.currentUser.familyName = family
+                    print("Setting currentUser.familyName = \(family)")
+                    print("currentUser.login is \(self.currentUser.login)")
+                    self.dbDataLoaded = true
+                            
+                } else {
+                    print("Document does not exist")
+                }
+                            
+            }
         }
     }
     
     var dbDataLoaded = false {
         didSet {
             if dbDataLoaded {
+                print("dbDataLoaded property changed from \(oldValue) to \(dbDataLoaded)")
                 performSegue(withIdentifier: "toMainMenu", sender: self)
             }
         }
@@ -51,34 +86,6 @@ class ViewController: UIViewController {
     
     @IBAction func newAccountButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "toCreateParent", sender: Any.self)
-    }
-
-    func updateCurrentUser(user: User) {
-        print("function updateCurrentUser received class with the login property = \(user.login)")
-        db = Firestore.firestore()
-        let settings = FirestoreSettings()
-        Firestore.firestore().settings = settings
-        let Ref = db.collection("users").document("\(user.login)")
-                          
-        Ref.getDocument { (document, error) in
-           if let document = document, document.exists {
-                _ = document.data().map(String.init(describing:)) ?? "nil"
-                let family = document.get("familyName") as! String
-                let isAdult = document.get("isAdult") as! Bool
-                let name = document.get("name") as! String
-                if isAdult {
-                    let score = document.get("score") as! Int
-                    user.score = score
-                }
-                user.username = name
-                user.isAdult = isAdult
-                user.familyName = family
-                self.dbDataLoaded = true
-           } else {
-               print("Document does not exist")
-           }
-            
-        }
     }
         
     override func viewDidLoad() {
@@ -101,12 +108,17 @@ class ViewController: UIViewController {
                     }
                 }
             }
-        } 
+        } else {
+            UserDefaults.standard.set("false", forKey: "lastLoginSucceeded")
+            UserDefaults.standard.set(self.loginTextField.text!, forKey: "")
+            UserDefaults.standard.set(self.passwordTextField.text!, forKey: "")
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMainMenu" {
             let destinationVC = segue.destination as! MainMenuViewController
+            print("Preparing segue: passing user to mainmenuVC with params name:\(currentUser.username), login: \(currentUser.login), family: \(currentUser.familyName), isAdult: \(currentUser.isAdult), score: \(currentUser.score), isBoy: \(currentUser.isBoy)")
             destinationVC.user = currentUser
         }
     }
@@ -138,7 +150,7 @@ class ViewController: UIViewController {
                     if self.loginTextField.text != "" && self.passwordTextField.text != "" {
                         UserDefaults.standard.set(self.loginTextField.text!, forKey: "user")
                         UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
-                        print("ViewController: setting password default value to: \(UserDefaults.standard.object(forKey: "password") as? String)")
+                        print("ViewController: setting password default value to: \(String(describing: UserDefaults.standard.object(forKey: "password") as? String))")
                     }
                 }
             }
