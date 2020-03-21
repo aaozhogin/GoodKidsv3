@@ -60,7 +60,7 @@ class NewUserViewController: UIViewController {
     func create(user: User, password: String) {
 //        familyName: String, name: String, login: String, password: String) {
     
-        let docRef = db.collection("famlies").document(user.familyName)
+        let docRef = db.collection("families").document(user.familyName)
         docRef.getDocument { (document, error) in
             if let document = document {
                 if document.exists{
@@ -68,7 +68,7 @@ class NewUserViewController: UIViewController {
                     self.showAlert(alertMessage: "Family with this name already exists. Please pick another name")
                 } else {
                     print("family does not exist, creating new user")
-                    let email = "\(user.login)@domain.com"
+                    let email = "\(user.login)@mydomain.com"
                      Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                          if error != nil {
                              let message = error?.localizedDescription

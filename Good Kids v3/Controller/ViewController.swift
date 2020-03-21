@@ -10,15 +10,41 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
-//    var modelController = ModelController()
-    let defaults = UserDefaults.standard
-    var db: Firestore!
     
+    var db: Firestore!
+    let defaults = UserDefaults.standard
+    var currentUser = User()
+    var cameFromMainMenu = false
+    
+    var loggedIn = false {
+        didSet {
+            print("loggedIn property has changed from \(oldValue) to \(loggedIn) ")
+            if loginTextField.text != "" {
+                if let login = loginTextField.text {
+                    currentUser.login = login
+                }
+            } else {
+                if let login = UserDefaults.standard.object(forKey: "user") as? String {
+                    currentUser.login = login
+                }
+            }
+            updateCurrentUser(user: currentUser)
+        }
+    }
+    
+    var dbDataLoaded = false {
+        didSet {
+            if dbDataLoaded {
+                performSegue(withIdentifier: "toMainMenu", sender: self)
+            }
+        }
+    }
+
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func loginButtonClicked(_ sender: Any) {
-        if String(loginTextField.text!).count > 0 && String(passwordTextField.text!).count > 0 {
+       
+        if String(loginTextField.text!).count > 0 && String(passwordTextField.text!).count > 5 {
             login(username: loginTextField.text!, password: passwordTextField.text!)
         }
     }
@@ -26,129 +52,106 @@ class ViewController: UIViewController {
     @IBAction func newAccountButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "toCreateParent", sender: Any.self)
     }
-    
+
+    func updateCurrentUser(user: User) {
+        print("function updateCurrentUser received class with the login property = \(user.login)")
+        db = Firestore.firestore()
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        let Ref = db.collection("users").document("\(user.login)")
+                          
+        Ref.getDocument { (document, error) in
+           if let document = document, document.exists {
+                _ = document.data().map(String.init(describing:)) ?? "nil"
+                let family = document.get("familyName") as! String
+                let isAdult = document.get("isAdult") as! Bool
+                let name = document.get("name") as! String
+                if isAdult {
+                    let score = document.get("score") as! Int
+                    user.score = score
+                }
+                user.username = name
+                user.isAdult = isAdult
+                user.familyName = family
+                self.dbDataLoaded = true
+           } else {
+               print("Document does not exist")
+           }
+            
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-//        view.addGestureRecognizer(tap)
-//
-//        if let lastLoginAttempt = UserDefaults.standard.object(forKey: "lastLoginSucceeded") as? String {
-//            if lastLoginAttempt == "true" {
-//                let user = UserDefaults.standard.object(forKey: "user") as? String
-//                let password = UserDefaults.standard.object(forKey: "password") as? String
-//
-//            }
-//
-//            if loginTextField.text != "" && passwordTextField.text != "" {
-//                print("both username & password populated from defaults")
-//
-//
-//                if let lastLogin = UserDefaults.standard.object(forKey: "lastLoginSucceeded") as? String {
-//                    print(lastLogin)
-//                    if lastLogin == "true" {
-//                        print("Condition met: last login successful = true")
-//
-//
-//                        preLogin()
-//
-//                } else {print("lastlogin is false")}
-//
-//                }
-//            }
-        }
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     
-//    func preLogin() {
-//        if loginTextField.text == "" || passwordTextField.text == "" {
-//
-//
-//                 } else if passwordTextField.text!.count < 6 {
-//                    print("password should be 6 or more characrets long")
-//                 } else {
-//                    print("Auth should be triggered")
-//
-//                    let user = Auth.auth().currentUser;
-//
-//                    if user != nil {
-//                        print("another user is logged in")
-//                        try! Auth.auth().signOut()
-//
-//
-//                        login()
-//                        // User is signed in.
-//                      } else {
-//
-//                        login()
-//                      }
-//
-//                        }
-//
-//                   }
+        if cameFromMainMenu == false {
+            if let lastLoginAttempt = UserDefaults.standard.object(forKey: "lastLoginSucceeded") as? String {
+                if lastLoginAttempt == "true" {
+                    
+                    if let user = UserDefaults.standard.object(forKey: "user") as? String {
+                        if let password = UserDefaults.standard.object(forKey: "password") as? String {
+                            print("found valid credentials from previous login: \(user):\(password)")
+                            if user != "" && password != "" {
+                                login(username: user, password: password)
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+    }
 
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if segue.identifier == "toMainMenu" {
-//
-//
-//
-//                let destinationVC = segue.destination as! MainMenuViewController
-//                destinationVC.modelController = modelController
-//    //            if let textToPass = usernameTextField.text {
-//    //                destinationVC.username = textToPass
-//                } else if segue.identifier == "toCreateParent" {
-//                let destinationVC = segue.destination as! NewUserViewController
-//                if let username = loginTextField.text {
-//
-//                    modelController.currentUser.username = username
-//                }
-//                    destinationVC.modelController = modelController
-//
-////                }
-////                if let textToPass = passwordTextField.text {
-////                    destinationVC.password = textToPass
-////                }
-//            }
-//        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMainMenu" {
+            let destinationVC = segue.destination as! MainMenuViewController
+            destinationVC.user = currentUser
+        }
+    }
     
-        func login(username: String, password: String) {
+    func login(username: String, password: String) {
             
             let email = "\(username)@mydomain.com"
-//            let usersRef = db.collection("users")
-            
+
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error != nil {
                     let message = error?.localizedDescription
                     if message!.contains("There is no user record corresponding to this identifier") {
-                        print("This user does not exist. Click 'New User' to create")
+                        self.showAlert(alertMessage: "This user does not exist. Click 'New User' to create")
+                        print(error?.localizedDescription as Any)
                         
                     } else if message!.contains("The password is invalid or the user does not have a password") {
-                        print("Password incorrect")
-            
+                        self.showAlert(alertMessage: "Password incorrect")
+                        
                     } else {
                         print(error?.localizedDescription as Any)
                     }
-                                            
+                    UserDefaults.standard.set("false", forKey: "lastLoginSucceeded")
                 } else {
                     print("Login was successful")
-
-//                    self.modelController.user.username = username
-//                    self.db.collection("users").whereField("username", isEqualTo: username).getDocuments() { (QuerySnapshot, err) in
-//                        if let err = err {
-//                            print("Error getting user data: \(err)")
-//                        } else {
-//                            for document in QuerySnapshot!.documents {
-//                                print("\(document.documentID) => \(document.data())")
-//                            }
-//                        }
-                    }
-                                                             
+                    print("user.login = \(username)")
+                    self.loggedIn = true
+                    
                     UserDefaults.standard.set("true", forKey: "lastLoginSucceeded")
-                    UserDefaults.standard.set(self.loginTextField.text, forKey: "user")
-                    UserDefaults.standard.set(self.passwordTextField.text, forKey: "password")
-                    print("breakpoint")
-//                                            self.performSegue(withIdentifier: "toMainMenu", sender: self)
-                }}
+                    if self.loginTextField.text != "" && self.passwordTextField.text != "" {
+                        UserDefaults.standard.set(self.loginTextField.text!, forKey: "user")
+                        UserDefaults.standard.set(self.passwordTextField.text!, forKey: "password")
+                        print("ViewController: setting password default value to: \(UserDefaults.standard.object(forKey: "password") as? String)")
+                    }
+                }
             }
+    }
+    
+    func showAlert(alertMessage: String) {
+        let alert = UIAlertController(title: alertMessage, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
+        present(alert, animated: true)
+    }
+
+}
     
 
 

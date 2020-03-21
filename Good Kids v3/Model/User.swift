@@ -37,19 +37,18 @@ class User {
                 print("Error writing into the DB")
             } else {
                 print("Record has been added to the users db")
-                db.collection("famlies").document("\(self.familyName)").setData([
+                db.collection("families").document("\(self.familyName)").setData([
                     self.username: self.login
                 ]) {err in
                     if err != nil {
                         print("Error writing into the DB")
                     } else {
                         print("Record has been added to the famliies db")
-                        self.addedToDB = true
-                               }
+        
+                        }
                     }
             }
         }
-
     }
         
     func updateUserDefauls(password: String) {

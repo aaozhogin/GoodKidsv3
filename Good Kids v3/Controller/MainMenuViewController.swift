@@ -19,12 +19,25 @@ class MainMenuViewController: UIViewController {
         performSegue(withIdentifier: "toNextParentScreen", sender: self)
     }
     
+    @IBAction func logOffButtonClicked(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            let loginVC = self.navigationController?.viewControllers[1] as! ViewController
+            self.navigationController?.popToViewController(loginVC, animated: true)
+        } catch {
+            print("could not sign out")
+        }
+    }
+    
+    
     var db: Firestore!
     var user: User!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        familyLabel.text = "Family: \(user.familyName)"
         if user.score >= 0 {
         balanceLabel.text = "Balance: \(user.score)"
         } else {
@@ -35,9 +48,9 @@ class MainMenuViewController: UIViewController {
         } else {
         welcomeLabel.text = "Hello \(user.username)! \n you are kid"
         }
+        print("MainMenuVC: password default value is: \(UserDefaults.standard.object(forKey: "password") as? String)")
         
-        familyLabel.text = "Family: \(user.familyName)"
-        // Do any additional setup after loading the view.
+    
     }
     
 
@@ -53,7 +66,10 @@ class MainMenuViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNextParentScreen" {
             let destinationVC = segue.destination as! AddNextUserViewController
-//            destinationVC.user = self.user
+            destinationVC.user = user
+//        } else if segue.identifier == "backToLoginScreen" {
+//            let destinationVC = segue.destination as! ViewController
+//            destinationVC.cameFromMainMenu = true
         }
     }
 

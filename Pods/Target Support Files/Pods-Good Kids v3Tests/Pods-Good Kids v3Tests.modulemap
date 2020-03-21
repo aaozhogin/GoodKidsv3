@@ -1,0 +1,6 @@
+framework module Pods_Good_Kids_v3Tests {
+  umbrella header "Pods-Good Kids v3Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

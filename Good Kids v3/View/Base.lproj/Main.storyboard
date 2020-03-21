@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Good_Kids_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="99G-u0-Am7">
-                                <rect key="frame" x="107" y="308.5" width="200" height="279.5"/>
+                                <rect key="frame" x="107" y="281.5" width="200" height="279.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9it-uw-xl2">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
@@ -106,7 +106,7 @@
             <objects>
                 <tableViewController id="aE8-lD-rmZ" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EPx-Aa-UOr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -135,11 +135,11 @@
             <objects>
                 <viewController id="jo0-aB-LsI" customClass="MainMenuViewController" customModule="Good_Kids_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22X-nc-eJl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="S8A-WS-Ui2">
-                                <rect key="frame" x="121.5" y="340" width="171" height="216"/>
+                                <rect key="frame" x="121.5" y="313" width="171" height="216"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZM-K8-Hqo">
                                         <rect key="frame" x="0.0" y="0.0" width="171" height="41"/>
@@ -172,17 +172,21 @@ you are %TYPE%</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqM-v8-rfG">
-                                <rect key="frame" x="30" y="802" width="49" height="30"/>
+                                <rect key="frame" x="30" y="748" width="49" height="30"/>
                                 <state key="normal" title="Log off"/>
+                                <connections>
+                                    <action selector="logOffButtonClicked:" destination="jo0-aB-LsI" eventType="touchUpInside" id="uos-sa-hkV"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backToLoginScreen" id="dmZ-1d-CXa"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gok-bN-19m">
-                                <rect key="frame" x="30" y="118" width="253.5" height="48"/>
+                                <rect key="frame" x="30" y="30" width="253.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family: %FAMILYNAME%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOI-zo-h3n">
-                                <rect key="frame" x="30" y="181" width="190" height="20.5"/>
+                                <rect key="frame" x="30" y="93" width="190" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -220,11 +224,11 @@ you are %TYPE%</string>
             <objects>
                 <viewController id="AV7-VD-NsP" customClass="AddNextUserViewController" customModule="Good_Kids_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eeq-On-0Ko">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="P07-G0-mOk">
-                                <rect key="frame" x="107" y="291" width="200" height="314"/>
+                                <rect key="frame" x="107" y="264" width="200" height="314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add next user menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10r-6I-ips">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
@@ -316,11 +320,11 @@ you are %TYPE%</string>
             <objects>
                 <viewController id="1QR-sB-1xM" customClass="NewUserViewController" customModule="Good_Kids_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hCu-fk-YLa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="tw7-eu-LHm">
-                                <rect key="frame" x="107" y="274" width="200" height="348.5"/>
+                                <rect key="frame" x="107" y="247" width="200" height="348.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add first user menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydN-rJ-PWE">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
@@ -429,11 +433,11 @@ you are %TYPE%</string>
             <objects>
                 <viewController id="BIr-Xf-6ux" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vn-tg-eC5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="YBS-6z-Rap">
-                                <rect key="frame" x="82" y="137.5" width="250" height="621.5"/>
+                                <rect key="frame" x="82" y="110.5" width="250" height="621.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add kid menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCt-Zs-gCE">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="20.5"/>
@@ -556,6 +560,7 @@ you are %TYPE%</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4Aa-Lk-ltX"/>
+        <segue reference="Ndk-SG-wWD"/>
+        <segue reference="dmZ-1d-CXa"/>
     </inferredMetricsTieBreakers>
 </document>
