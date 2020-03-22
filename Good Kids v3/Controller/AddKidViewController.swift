@@ -66,9 +66,11 @@ class AddKidViewController: UIViewController {
 //                                                    self.newKidUser.isBoy = false
 //                                                }
                                                 
-                                                let menuVC = self.navigationController?.viewControllers[1] as! MainMenuViewController
-                                                self.navigationController?.popToViewController(menuVC, animated: true)
-                                                
+                                                if let menuVC = self.navigationController?.viewControllers[1] {
+                                                    self.navigationController?.popToViewController(menuVC, animated: true)
+                                                } else {
+                                                    print("Could not pop Main Menu ViewController")
+                                                }
                                             }
                                         }
                                     }

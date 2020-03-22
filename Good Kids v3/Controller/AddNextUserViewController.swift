@@ -80,11 +80,13 @@ class AddNextUserViewController: UIViewController {
                                                        }
                                                    }
                                             }
-                                            if let menuVC = self.navigationController?.viewControllers[1] {
-                                                self.navigationController?.popToViewController(menuVC, animated: true)
-                                            } else {
-                                                print("Cannot pop MenuViewController (self.navigationController?.viewControllers[1])")
-                                            }
+                                            self.navigationController?.popViewController(animated: true)
+//                                            issue: https://aaozhogin.atlassian.net/browse/GK-6
+//                                            if let menuVC = self.navigationController?.viewControllers[-1] {
+//                                                self.navigationController?.popToViewController(menuVC, animated: true)
+//                                            } else {
+//                                                print("Cannot pop MenuViewController (self.navigationController?.viewControllers[-1])")
+//                                            }
                                         }
                                     }
                                 }
