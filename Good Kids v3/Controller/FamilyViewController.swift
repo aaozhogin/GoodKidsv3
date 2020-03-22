@@ -19,10 +19,10 @@ class FamilyViewController: UITableViewController {
     var lineArray: Dictionary<Int, (String, String, String)> = [0: ("", "family loading", "")]
     @IBOutlet var family: UITableView!
     
+    
     override func viewDidLoad() {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
-             
         db = Firestore.firestore()
 //        tableView.separatorStyle = .none
         
@@ -31,7 +31,7 @@ class FamilyViewController: UITableViewController {
         family.register(UINib(nibName: "FamilyTableViewCell", bundle: nil), forCellReuseIdentifier: "FamilyTableViewCell")
 //        family.rowHeight = 50.0
         loadFamilyMembers()
-
+     
         print("Family board loaded")
     }
 
@@ -41,6 +41,7 @@ class FamilyViewController: UITableViewController {
     }
     
     func loadFamilyMembers() {
+   
         print("loadFamilyMembers method triggered - Looking for documents with familyName = \(user.familyName)")
         self.lineArray[0] = ("Name", "Type", "Score")
         db.collection("users").whereField("familyName", isEqualTo: "\(user.familyName)").order(by: "isAdult", descending: true)
@@ -81,6 +82,7 @@ class FamilyViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         guard (navigationController?.navigationBar) != nil else {fatalError("Navigation controller does not exist")}
+        loadFamilyMembers()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
