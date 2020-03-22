@@ -11,7 +11,7 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+//    Credits: "This is the coolest project made by Alex Ozhogin and Alex Arkhipenko - Future Forbes top 2" 
     var window: UIWindow?
     
     
