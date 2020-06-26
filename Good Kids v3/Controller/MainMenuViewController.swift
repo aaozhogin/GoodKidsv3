@@ -20,6 +20,11 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var addKidButton: UIButton!
     @IBOutlet weak var addParentButton: UIButton!
     
+    
+    @IBAction func addTaskButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toAddTask", sender: self)
+    }
+    
     @IBAction func addParentButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "toNextParentScreen", sender: self)
     }
@@ -85,16 +90,22 @@ class MainMenuViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNextParentScreen" {
+            print("Preparing segue toNextParentScreen")
             let destinationVC = segue.destination as! AddNextUserViewController
             destinationVC.user = user
         } else if segue.identifier == "toCreateKid" {
+            print("Preparing segue toCreateKid")
             let destinationVC = segue.destination as! AddKidViewController
             destinationVC.user = user
         } else if segue.identifier == "toFamilyScreen" {
+            print("Preparing segue toFamilyScreen")
             let destinationVC = segue.destination as! FamilyViewController
             destinationVC.user = user
-            
-        }
+        } else if segue.identifier == "toAddTask" {
+            print("Preparing segue toAddTask")
+            let destinationVC = segue.destination as! AddTaskViewController
+            destinationVC.user = user
+        } else {print("wtf is this option?")}
     }
 
 }

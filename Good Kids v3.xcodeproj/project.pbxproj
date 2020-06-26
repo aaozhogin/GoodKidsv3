@@ -26,6 +26,7 @@
 		056D382F2419870500CE739A /* FamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D382D2419870500CE739A /* FamilyTableViewCell.swift */; };
 		056D38302419870500CE739A /* FamilyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 056D382E2419870500CE739A /* FamilyTableViewCell.xib */; };
 		056D38342419921900CE739A /* AddNextUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056D38332419921900CE739A /* AddNextUserViewController.swift */; };
+		0588A99A24444CB60027CF2C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588A99924444CB60027CF2C /* AddTaskViewController.swift */; };
 		81D2736F2775128B0B22B633 /* Pods_Good_Kids_v3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A745A9817B2D7B014DD91 /* Pods_Good_Kids_v3.framework */; };
 		90EE399D880315D97F3E96A1 /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ECB45BCC83282FD750BBAD /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework */; };
 		EFBA157EA231C32298CFB392 /* Pods_Good_Kids_v3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DF332A2F9E4080F8F38F98 /* Pods_Good_Kids_v3Tests.framework */; };
@@ -73,6 +74,7 @@
 		056D382D2419870500CE739A /* FamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTableViewCell.swift; sourceTree = "<group>"; };
 		056D382E2419870500CE739A /* FamilyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyTableViewCell.xib; sourceTree = "<group>"; };
 		056D38332419921900CE739A /* AddNextUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNextUserViewController.swift; sourceTree = "<group>"; };
+		0588A99924444CB60027CF2C /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		09ECB45BCC83282FD750BBAD /* Pods_Good_Kids_v3_Good_Kids_v3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Good_Kids_v3_Good_Kids_v3UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A745A9817B2D7B014DD91 /* Pods_Good_Kids_v3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Good_Kids_v3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE30580D08C8904D3670FC4 /* Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig"; path = "Target Support Files/Pods-Good Kids v3-Good Kids v3UITests/Pods-Good Kids v3-Good Kids v3UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				056D37EF2418E09C00CE739A /* ViewController.swift */,
 				056D38332419921900CE739A /* AddNextUserViewController.swift */,
 				050BE8D32425FE9200F3324C /* FamilyViewController.swift */,
+				0588A99924444CB60027CF2C /* AddTaskViewController.swift */,
 				056D38232419051300CE739A /* NewUserViewController.swift */,
 				054FA46D24259281007ACF78 /* AddKidViewController.swift */,
 				056D382824190B2B00CE739A /* MainMenuViewController.swift */,
@@ -240,7 +243,7 @@
 				056D37E42418E09C00CE739A /* Sources */,
 				056D37E52418E09C00CE739A /* Frameworks */,
 				056D37E62418E09C00CE739A /* Resources */,
-				D97886D592D7D5C832509230 /* [CP] Embed Pods Frameworks */,
+				046DC03C7592B3E0CA00E377 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,7 +281,7 @@
 				056D38052418E0A000CE739A /* Sources */,
 				056D38062418E0A000CE739A /* Frameworks */,
 				056D38072418E0A000CE739A /* Resources */,
-				B3B088925B39F7E228E445B9 /* [CP] Embed Pods Frameworks */,
+				B14E54D8BCA4D45025DDF7AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,6 +368,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		046DC03C7592B3E0CA00E377 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		93E9A0731231F2A59C45ECF5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,7 +429,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3B088925B39F7E228E445B9 /* [CP] Embed Pods Frameworks */ = {
+		B14E54D8BCA4D45025DDF7AC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,23 +444,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3-Good Kids v3UITests/Pods-Good Kids v3-Good Kids v3UITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D97886D592D7D5C832509230 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Good Kids v3/Pods-Good Kids v3-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DFC53BCE9E383D5BF915E7DD /* [CP] Check Pods Manifest.lock */ = {
@@ -478,6 +481,7 @@
 				056D37EC2418E09C00CE739A /* AppDelegate.swift in Sources */,
 				050BE8D42425FE9200F3324C /* FamilyViewController.swift in Sources */,
 				056D3822241900DB00CE739A /* User.swift in Sources */,
+				0588A99A24444CB60027CF2C /* AddTaskViewController.swift in Sources */,
 				056D382924190B2B00CE739A /* MainMenuViewController.swift in Sources */,
 				056D38242419051300CE739A /* NewUserViewController.swift in Sources */,
 				056D37EE2418E09C00CE739A /* SceneDelegate.swift in Sources */,
